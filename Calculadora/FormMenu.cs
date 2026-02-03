@@ -23,7 +23,7 @@ namespace Calculadora
             calculadoraSimple.Show();
         }
 
-        private void burbujaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void burbujaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmBurbuja burbuja = new FrmBurbuja();
             burbuja.Show();

@@ -34,6 +34,7 @@
             aplicacionesToolStripMenuItem = new ToolStripMenuItem();
             calculadoraSImpleToolStripMenuItem = new ToolStripMenuItem();
             burbujaToolStripMenuItem = new ToolStripMenuItem();
+            burbujaToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,10 +79,17 @@
             // 
             // burbujaToolStripMenuItem
             // 
+            burbujaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { burbujaToolStripMenuItem1 });
             burbujaToolStripMenuItem.Name = "burbujaToolStripMenuItem";
             burbujaToolStripMenuItem.Size = new Size(270, 34);
-            burbujaToolStripMenuItem.Text = "Burbuja";
-            burbujaToolStripMenuItem.Click += burbujaToolStripMenuItem_Click;
+            burbujaToolStripMenuItem.Text = "Ordenamientos";
+            // 
+            // burbujaToolStripMenuItem1
+            // 
+            burbujaToolStripMenuItem1.Name = "burbujaToolStripMenuItem1";
+            burbujaToolStripMenuItem1.Size = new Size(270, 34);
+            burbujaToolStripMenuItem1.Text = "Burbuja";
+            burbujaToolStripMenuItem1.Click += burbujaToolStripMenuItem1_Click;
             // 
             // Menu
             // 
@@ -106,5 +114,6 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem calculadoraSImpleToolStripMenuItem;
         private ToolStripMenuItem burbujaToolStripMenuItem;
+        private ToolStripMenuItem burbujaToolStripMenuItem1;
     }
 }
