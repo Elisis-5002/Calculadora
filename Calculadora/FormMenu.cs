@@ -1,3 +1,5 @@
+using Calculadora.Formularios;
+
 namespace Calculadora
 {
     public partial class Menu : Form
@@ -27,6 +29,12 @@ namespace Calculadora
         {
             FrmBurbuja burbuja = new FrmBurbuja();
             burbuja.Show();
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegistro registro = new FrmRegistro();
+            registro.Show();
         }
     }
 }
