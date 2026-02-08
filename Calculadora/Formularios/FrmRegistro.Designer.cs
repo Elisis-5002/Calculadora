@@ -38,6 +38,7 @@
             label2 = new Label();
             label1 = new Label();
             tbMostrar = new TabPage();
+            btnEliminar = new Button();
             dgvPersonas = new DataGridView();
             tabControl1.SuspendLayout();
             Registro.SuspendLayout();
@@ -135,6 +136,7 @@
             // tbMostrar
             // 
             tbMostrar.BackColor = SystemColors.Control;
+            tbMostrar.Controls.Add(btnEliminar);
             tbMostrar.Controls.Add(dgvPersonas);
             tbMostrar.Location = new Point(4, 34);
             tbMostrar.Name = "tbMostrar";
@@ -144,13 +146,23 @@
             tbMostrar.Tag = "Mostrar";
             tbMostrar.Text = "Mostrar";
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(639, 320);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.TabIndex = 1;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += button1_Click;
+            // 
             // dgvPersonas
             // 
             dgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPersonas.Location = new Point(3, 0);
             dgvPersonas.Name = "dgvPersonas";
             dgvPersonas.RowHeadersWidth = 62;
-            dgvPersonas.Size = new Size(769, 406);
+            dgvPersonas.Size = new Size(769, 276);
             dgvPersonas.TabIndex = 0;
             // 
             // FrmRegistro
@@ -182,5 +194,6 @@
         private Label label1;
         private Button btnRegistrar;
         private DataGridView dgvPersonas;
+        private Button btnEliminar;
     }
 }

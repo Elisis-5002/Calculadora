@@ -18,6 +18,18 @@ namespace Calculadora.Formularios
             InitializeComponent();
         }
 
+        private void verificarRegistro()
+        {
+            if (persona.Count == 0)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             persona.Add(new Persona() { Nombre = txtNombre.Text, Apelllido = txtApellido.Text, FechaNac = dtpFechaNac.Value });
@@ -30,9 +42,17 @@ namespace Calculadora.Formularios
             {
                 dgvPersonas.DataSource = null;
                 dgvPersonas.DataSource = persona;
-
-
+                verificarRegistro();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            persona.RemoveAt(dgvPersonas.CurrentRow.Index);
+            dgvPersonas.DataSource = null;
+            dgvPersonas.DataSource = persona;
+            verificarRegistro();
+
         }
     }
 }
