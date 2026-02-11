@@ -13,7 +13,7 @@ namespace Calculadora.Formularios
 {
     public partial class FrmTemporizador : Form
     {
-        string alarma1 = ""; 
+        string alarma1 = "";
         public FrmTemporizador()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Calculadora.Formularios
         private void tmrHora_Tick(object sender, EventArgs e)
         {
             labelHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
-            if(labelHora.Text == alarma1)
+            if (labelHora.Text == alarma1)
             {
 
                 SoundPlayer alarma = new SoundPlayer(@"C:\Users\Mario\Downloads\ringtones-page-gallo-despertador.wav");
@@ -31,12 +31,18 @@ namespace Calculadora.Formularios
             }
         }
 
-        
+
 
         private void mIalarma1_Click(object sender, EventArgs e)
         {
-            alarma1 = Interaction.InputBox("Ingrese la hora ", "Sistema", "00:00:00 x.x"); 
+            alarma1 = Interaction.InputBox("Ingrese la hora ", "Sistema", "00:00:00 x.x");
 
+        }
+
+        private void cronometroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCronometro cronometro = new frmCronometro();
+            cronometro.Show();
         }
     }
 }

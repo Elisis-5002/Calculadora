@@ -34,6 +34,7 @@
             menuStrip1 = new MenuStrip();
             establecerToolStripMenuItem = new ToolStripMenuItem();
             mIalarma1 = new ToolStripMenuItem();
+            cronometroToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // 
             // establecerToolStripMenuItem
             // 
-            establecerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mIalarma1 });
+            establecerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mIalarma1, cronometroToolStripMenuItem });
             establecerToolStripMenuItem.Name = "establecerToolStripMenuItem";
             establecerToolStripMenuItem.Size = new Size(107, 29);
             establecerToolStripMenuItem.Text = "Establecer";
@@ -76,6 +77,13 @@
             mIalarma1.Size = new Size(270, 34);
             mIalarma1.Text = "Alarma 1";
             mIalarma1.Click += mIalarma1_Click;
+            // 
+            // cronometroToolStripMenuItem
+            // 
+            cronometroToolStripMenuItem.Name = "cronometroToolStripMenuItem";
+            cronometroToolStripMenuItem.Size = new Size(270, 34);
+            cronometroToolStripMenuItem.Text = "Cronometro";
+            cronometroToolStripMenuItem.Click += cronometroToolStripMenuItem_Click;
             // 
             // FrmTemporizador
             // 
@@ -100,5 +108,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem establecerToolStripMenuItem;
         private ToolStripMenuItem mIalarma1;
+        private ToolStripMenuItem cronometroToolStripMenuItem;
     }
 }
