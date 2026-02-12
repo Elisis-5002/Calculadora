@@ -38,8 +38,10 @@
             guardarComoToolStripMenuItem1 = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
+            tssStatus = new ToolStripStatusLabel();
             rtbEditor = new RichTextBox();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // ofdEditor
@@ -72,45 +74,54 @@
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            nuevoToolStripMenuItem.Size = new Size(270, 34);
+            nuevoToolStripMenuItem.Size = new Size(231, 34);
             nuevoToolStripMenuItem.Text = "Nuevo";
             nuevoToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
             // 
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            abrirToolStripMenuItem.Size = new Size(270, 34);
+            abrirToolStripMenuItem.Size = new Size(231, 34);
             abrirToolStripMenuItem.Text = "Abrir";
             abrirToolStripMenuItem.Click += nuevoToolStripMenuItem_Click;
             // 
             // guardarToolStripMenuItem
             // 
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            guardarToolStripMenuItem.Size = new Size(270, 34);
+            guardarToolStripMenuItem.Size = new Size(231, 34);
             guardarToolStripMenuItem.Text = "Guardar";
             guardarToolStripMenuItem.Click += guardarToolStripMenuItem_Click;
             // 
             // guardarComoToolStripMenuItem1
             // 
             guardarComoToolStripMenuItem1.Name = "guardarComoToolStripMenuItem1";
-            guardarComoToolStripMenuItem1.Size = new Size(270, 34);
+            guardarComoToolStripMenuItem1.Size = new Size(231, 34);
             guardarComoToolStripMenuItem1.Text = "Guardar Como";
             guardarComoToolStripMenuItem1.Click += guardarComoToolStripMenuItem1_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(270, 34);
+            salirToolStripMenuItem.Size = new Size(231, 34);
             salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(24, 24);
-            statusStrip1.Location = new Point(0, 428);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tssStatus });
+            statusStrip1.Location = new Point(0, 418);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.Size = new Size(800, 32);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
+            // 
+            // tssStatus
+            // 
+            tssStatus.Name = "tssStatus";
+            tssStatus.Size = new Size(94, 25);
+            tssStatus.Text = "0 palabras";
+            tssStatus.Click += tssStatus_Click;
             // 
             // rtbEditor
             // 
@@ -119,6 +130,7 @@
             rtbEditor.Size = new Size(800, 367);
             rtbEditor.TabIndex = 2;
             rtbEditor.Text = "";
+            rtbEditor.TextChanged += rtbEditor_TextChanged;
             // 
             // FrmEditor
             // 
@@ -134,6 +146,8 @@
             Load += FrmEditor_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,5 +165,6 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private StatusStrip statusStrip1;
         private RichTextBox rtbEditor;
+        private ToolStripStatusLabel tssStatus;
     }
 }
