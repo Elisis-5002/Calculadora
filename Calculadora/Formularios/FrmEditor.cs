@@ -100,7 +100,28 @@ namespace Calculadora.Formularios
             string[] parrafos = texto.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             MessageBox.Show("Estadísticas: \n\nPalabras: " + tssStatus.Text + "\nLetras (con espacio): " + texto.Length.ToString() +
-                "\n Párrafos: "+parrafos.Length.ToString(), "Contador de palabras"); 
+                "\n Párrafos: " + parrafos.Length.ToString(), "Contador de palabras");
+        }
+
+        private void ftdEditor_Apply(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fuenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ftdEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.Font = ftdEditor.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(cldEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.ForeColor = cldEditor.Color;
+            }
         }
     }
 }

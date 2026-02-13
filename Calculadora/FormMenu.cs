@@ -50,8 +50,14 @@ namespace Calculadora
 
         private void editorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmEditor editor =new FrmEditor();
+            FrmEditor editor = new FrmEditor();
             editor.Show();
+        }
+
+        private void contadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmContador contador = new frmContador();
+            contador.Show();
         }
     }
 }
