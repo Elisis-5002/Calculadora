@@ -29,15 +29,23 @@ namespace Calculadora.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             XElement xml = new XElement("Directorio");
-            for (int i = 0; i < dgvPersonas.RowCount; i++)
+            for (int i = 0; i < dgvPersonas.RowCount-1; i++)
             {
                 xml.Add(
-                    new XElement("Personas"),
-                    new XAttribute("ID", dgvPersonas.Rows[i].Cells[0].Value),
+                    new XElement("Persona" , new XAttribute("ID", dgvPersonas.Rows[i].Cells[0].Value),
                     new XElement("Nombre", dgvPersonas.Rows[i].Cells[1].Value),
-                    new XElement("Telefono", dgvPersonas.Rows[i].Cells[2].Value)); 
+                    new XElement("Telefono", dgvPersonas.Rows[i].Cells[2].Value))); 
             }
-            xml.Save("Archivo.xml"); 
+            try
+            {
+                // Explorador de solciones - abrir en explorador de archivos - bin- debug- windows
+                xml.Save("Archivo.xml");
+                MessageBox.Show("Guardado", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
 
         }
